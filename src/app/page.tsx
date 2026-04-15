@@ -12,6 +12,18 @@ import TrustedBy from "@/components/shared/TrustedBy";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
 import { getLatestPosts } from "@/lib/blog/repository";
 import { Hammer, PencilRuler, Sofa } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Space Manthan | Architecture, Interiors & Construction",
+  description:
+    "Space Manthan delivers architecture, interiors, construction, and custom furniture under one roof with precision and craftsmanship.",
+  keywords:
+    "architecture, interior design, construction, custom furniture, Gurgaon, Space Manthan",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home() {
   const latestPosts = await getLatestPosts();

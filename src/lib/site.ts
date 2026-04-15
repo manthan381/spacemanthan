@@ -1,9 +1,15 @@
 export const SITE_NAME = "Spacemanthan";
+const DEFAULT_SITE_URL = "https://spacemanthan.com"; // Adjust domain as needed
 
-export function getSiteUrl(): string {
-  const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  if (envUrl && envUrl.startsWith("http")) {
-    return envUrl.replace(/\/$/, "");
-  }
-  return "http://localhost:3000";
+function stripTrailingSlash(url: string) {
+  return url.endsWith("/") ? url.slice(0, -1) : url;
+}
+
+export function getSiteUrl() {
+  const value =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    process.env.NEXT_SITE_URL ??
+    DEFAULT_SITE_URL;
+
+  return stripTrailingSlash(value);
 }

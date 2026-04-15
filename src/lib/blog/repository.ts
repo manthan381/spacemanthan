@@ -1,13 +1,17 @@
 import type { BlogPost } from "@/lib/blog/types";
 import { blogPosts } from "@/lib/blogData";
-import { createSupabaseServer } from "@/lib/supabase/server";
+import { getSupabaseServerClient, hasSupabaseConfig } from "@/lib/supabase/server";
 import { BLOG_SELECT_FIELDS } from "./queries";
 
-function isSupabaseConfigured() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-  );
+const DEFAULT_FALLBACK_ON_ERROR = true;
+
+function shouldFallbackOnError() {
+  const value = process.env.SUPABASE_FALLBACK_ON_ERROR;
+  if (value === undefined) {
+    return DEFAULT_FALLBACK_ON_ERROR;
+  }
+
+  return value.toLowerCase() !== "false";
 }
 
 function stripHtml(input: string) {
@@ -41,11 +45,14 @@ function mapFallbackPosts(): BlogPost[] {
 }
 
 export async function getPublishedPosts(limit = 12): Promise<BlogPost[]> {
-  if (!isSupabaseConfigured()) {
+  if (!hasSupabaseConfig()) {
     return mapFallbackPosts().slice(0, limit);
   }
 
-  const supabase = createSupabaseServer();
+  const supabase = getSupabaseServerClient();
+  if (!supabase) {
+    return mapFallbackPosts().slice(0, limit);
+  }
   const { data, error } = await supabase
     .from("posts")
     .select(BLOG_SELECT_FIELDS)
@@ -54,7 +61,12 @@ export async function getPublishedPosts(limit = 12): Promise<BlogPost[]> {
     .limit(limit);
 
   if (error) {
-    throw new Error(error.message);
+    const message = `Supabase error: ${error.message}`;
+    if (!shouldFallbackOnError()) {
+      throw new Error(message);
+    }
+    console.warn("Supabase error (falling back to local data):", error.message);
+    return mapFallbackPosts().slice(0, limit);
   }
 
   return data ?? [];
@@ -65,11 +77,14 @@ export async function getLatestPosts(limit = 3): Promise<BlogPost[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!isSupabaseConfigured()) {
+  if (!hasSupabaseConfig()) {
     return mapFallbackPosts().find((post) => post.slug === slug) ?? null;
   }
 
-  const supabase = createSupabaseServer();
+  const supabase = getSupabaseServerClient();
+  if (!supabase) {
+    return mapFallbackPosts().find((post) => post.slug === slug) ?? null;
+  }
   const { data, error } = await supabase
     .from("posts")
     .select(BLOG_SELECT_FIELDS)
@@ -78,18 +93,26 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     .maybeSingle();
 
   if (error) {
-    throw new Error(error.message);
+    const message = `Supabase error: ${error.message}`;
+    if (!shouldFallbackOnError()) {
+      throw new Error(message);
+    }
+    console.warn("Supabase error (falling back to local data):", error.message);
+    return mapFallbackPosts().find((post) => post.slug === slug) ?? null;
   }
 
   return data ?? null;
 }
 
 export async function getPostSlugs(): Promise<string[]> {
-  if (!isSupabaseConfigured()) {
+  if (!hasSupabaseConfig()) {
     return mapFallbackPosts().map((post) => post.slug);
   }
 
-  const supabase = createSupabaseServer();
+  const supabase = getSupabaseServerClient();
+  if (!supabase) {
+    return mapFallbackPosts().map((post) => post.slug);
+  }
   const { data, error } = await supabase
     .from("posts")
     .select("slug")
@@ -97,7 +120,12 @@ export async function getPostSlugs(): Promise<string[]> {
     .order("published_at", { ascending: false });
 
   if (error) {
-    throw new Error(error.message);
+    const message = `Supabase error: ${error.message}`;
+    if (!shouldFallbackOnError()) {
+      throw new Error(message);
+    }
+    console.warn("Supabase error (falling back to local data):", error.message);
+    return mapFallbackPosts().map((post) => post.slug);
   }
 
   return (data ?? []).map((row) => row.slug);

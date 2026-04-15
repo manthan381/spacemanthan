@@ -7,11 +7,14 @@ import { getPublishedPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Insights on Architecture, Design & Construction | Space Manthan Blog",
   description:
-    "Industry insights on architecture, construction, and design from Spacemanthan.",
-  keywords: "architecture, construction, design, interiors, blog",
-  alternates: { canonical: "/blog" },
+    "Read the latest architecture blogs, interior design ideas, and construction insights from Space Manthan. Stay updated with modern design trends and expert tips.",
+  keywords:
+    "architecture blog India, interior design tips, elevation design ideas, home design trends, architecture insights, interior design blog, modern home design ideas, architecture news India, design inspiration India",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function Blog() {
@@ -20,7 +23,7 @@ export default async function Blog() {
   return (
     <main>
       <Header />
-      <section className="mx-auto max-w-7xl py-20">
+      <section className="mx-auto max-w-7xl pt-24 pb-12">
         <BlogHero />
         <BlogGrid posts={posts} />
       </section>

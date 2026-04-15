@@ -9,7 +9,19 @@ import { TeamSection } from "@/components/shared/TeamSection";
 import TrustedBy from "@/components/shared/TrustedBy";
 import { VisionMission } from "@/components/shared/VisionMission";
 import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Space Manthan | Our Story, Team & Process",
+  description:
+    "Learn about Space Manthan, our team, process, and the values behind our architecture and interior design work.",
+  keywords:
+    "about space manthan, architecture firm, interior design team, design process",
+  alternates: {
+    canonical: "/about-us",
+  },
+};
 
 export default function Home() {
   return (

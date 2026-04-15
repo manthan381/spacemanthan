@@ -6,6 +6,18 @@ type BlogGridProps = {
   posts: BlogPostSummary[];
 };
 
+function formatDate(date: string | null) {
+  if (!date) {
+    return "";
+  }
+
+  return new Date(date).toLocaleDateString("en-IN", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
   return (
     <section className="px-4 md:px-12 py-16">
@@ -13,7 +25,7 @@ export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+            className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <Image
               src={post.cover_image || "/images/blogs/blog-1.webp"}
@@ -24,19 +36,23 @@ export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
             />
             <div className="p-5">
               <Link href={`/blog/${post.slug}`}>
-                <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-slate-900">
+                  {post.title}
+                </h3>
               </Link>
-              <p className="text-gray-950 text-sm mb-4">
+              <p className="text-slate-600 text-sm mb-4">
                 {post.excerpt || ""}
               </p>
-              <div className="text-xs text-gray-900">
+              <div className="text-xs text-slate-500">
                 {post.author || ""}
-                {post.published_at ? ` • ${post.published_at}` : ""}
+                {post.published_at
+                  ? ` • ${formatDate(post.published_at)}`
+                  : ""}
               </div>
               <div className="py-1">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="text-primary hover:underline text-sm font-medium"
+                  className="text-[#012169] hover:underline text-sm font-medium"
                 >
                   Read More →
                 </Link>

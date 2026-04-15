@@ -5,30 +5,74 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+const defaultBlogs = [
+  {
+    title: "Top 10 Sustainable Architecture Trends in 2025",
+    excerpt:
+      "Explore how open-plan concepts and minimalist architecture shape the way we live.",
+    cover_image: "/images/blogs/blog-1.webp",
+    author: "Space Manthan Team",
+    published_at: "2025-06-15T00:00:00.000Z",
+    slug: "sustainable-architecture-trends-2025",
+  },
+  {
+    title: "How Smart Homes are Changing Urban Living",
+    excerpt:
+      "Discover emerging trends in office and retail space design that blend function and beauty.",
+    cover_image: "/images/blogs/blog-2.jpg",
+    author: "Space Manthan Team",
+    published_at: "2025-06-10T00:00:00.000Z",
+    slug: "smart-homes-are-changing-urban-living",
+  },
+  {
+    title: "Designing for Wellness: The New Trend in Office Spaces",
+    excerpt:
+      "Learn about eco-friendly building materials that reduce impact while maximizing durability.",
+    cover_image: "/images/blogs/blog-3.jpg",
+    author: "Space Manthan Team",
+    published_at: "2025-06-05T00:00:00.000Z",
+    slug: "new-trend-in-office-spaces",
+  },
+];
+
 type BlogSectionProps = {
-  posts: BlogPostSummary[];
+  posts?: BlogPostSummary[];
 };
 
+function formatDate(date: string | null) {
+  if (!date) {
+    return "";
+  }
+
+  return new Date(date).toLocaleDateString("en-IN", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 export default function BlogSection({
-  posts,
+  posts = [],
 }: Readonly<BlogSectionProps>) {
+  const blogs = posts.length > 0 ? posts : defaultBlogs;
+
   return (
-    <section>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="pt-16 pb-4">
+      <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl text-gray-950 mb-4"
+          className="text-3xl sm:text-4xl text-[#012169] mb-4 font-bold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Top Industry <span className="font-bold">Insights</span>
+          Top Industry <span>Insights</span>
         </motion.h2>
 
         {/* Description */}
         <motion.p
-          className="text-gray-900 max-w-2xl mx-auto mb-12"
+          className="text-slate-600 max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -40,10 +84,10 @@ export default function BlogSection({
 
         {/* Blog Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((blog, i) => (
+          {blogs.map((blog, i) => (
             <motion.div
-              key={blog.id}
-              className="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+              key={blog.slug}
+              className="bg-slate-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -58,15 +102,21 @@ export default function BlogSection({
                 />
               </div>
               <div className="p-5 text-left">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
                   {blog.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-slate-600 text-sm mb-4">
                   {blog.excerpt || ""}
+                </p>
+                <p className="text-xs text-slate-500 mb-3">
+                  {blog.author || ""}
+                  {blog.published_at
+                    ? ` • ${formatDate(blog.published_at)}`
+                    : ""}
                 </p>
                 <Link
                   href={`/blog/${blog.slug}`}
-                  className="text-primary hover:underline text-sm font-medium"
+                  className="text-[#012169] hover:underline text-sm font-medium"
                 >
                   Read More →
                 </Link>
