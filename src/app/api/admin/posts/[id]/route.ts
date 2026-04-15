@@ -6,9 +6,6 @@ import { NextResponse } from "next/server";
 
 type UpdatePayload = ReturnType<typeof blogPostUpdateSchema.parse>;
 
-type PostRow = {
-  slug: string;
-};
 
 function unauthorizedResponse() {
   return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });

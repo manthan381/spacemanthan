@@ -14,14 +14,15 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 type ProjectPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
   const { projects } = await import("@/lib/projectData");
-  const project = projects.find((item) => item.slug === params.slug);
+  const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
     return {

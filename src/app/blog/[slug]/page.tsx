@@ -8,13 +8,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 type BlogPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({
   params,
 }: BlogPageProps): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) {
     return {
       title: "Blog Not Found",
@@ -52,7 +53,8 @@ export async function generateMetadata({
 export default async function BlogDetailPage({
   params,
 }: Readonly<BlogPageProps>) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return notFound();
 
   const publishedDate = post.published_at

@@ -2,6 +2,7 @@
 
 import RichTextEditor from "@/components/shared/admin/RichTextEditor";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import {
     ArrowLeft,
     Calendar,
@@ -354,7 +355,7 @@ export default function AdminPostManager() {
               </div>
               <select
                 value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value as any)}
+                onChange={(e) => setStatusFilter(e.target.value as "all" | "draft" | "published")}
                 className="bg-white border border-slate-200 rounded-2xl py-3.5 px-4 font-bold text-slate-700 focus:outline-none focus:ring-4 focus:ring-blue-900/10 transition-all appearance-none cursor-pointer"
               >
                 <option value="all">All Content</option>
@@ -396,10 +397,11 @@ export default function AdminPostManager() {
                     >
                       <div className="w-full md:w-48 aspect-video rounded-2xl overflow-hidden bg-slate-50 flex-shrink-0 relative border border-slate-100">
                         {post.cover_image ? (
-                          <img
+                          <Image
                             src={post.cover_image}
-                            alt=""
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            alt={post.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-slate-300">
@@ -575,9 +577,10 @@ export default function AdminPostManager() {
                       <div className="aspect-video rounded-2xl bg-slate-50 border-2 border-dashed border-slate-200 relative overflow-hidden group">
                         {form.coverImage ? (
                           <>
-                            <img
+                            <Image
                               src={form.coverImage}
-                              className="w-full h-full object-cover"
+                              fill
+                              className="object-cover"
                               alt="Preview"
                             />
                             <div className="absolute inset-0 bg-[#012169]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer">
@@ -634,7 +637,7 @@ export default function AdminPostManager() {
                           onChange={(e) =>
                             setForm((p) => ({
                               ...p,
-                              status: e.target.value as any,
+                              status: e.target.value as "draft" | "published",
                             }))
                           }
                           className="w-full border border-slate-100 rounded-xl p-3 font-bold text-sm bg-white"
