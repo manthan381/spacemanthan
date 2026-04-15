@@ -1,38 +1,23 @@
 // src/app/projects/page.tsx
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { projects, ProjectCategory } from "@/lib/projectData";
-import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import Header from "@/components/shared/Header";
+import { ProjectCategory, projects } from "@/lib/projectData";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 
-// List of categories with "All"
-const categories: (ProjectCategory | "All")[] = [
-  "All",
-  ...Array.from(new Set(projects.map((p) => p.category))),
-];
+// List of available project categories
+const categories: ProjectCategory[] = Array.from(
+  new Set(projects.map((p) => p.category))
+);
 
 // Category descriptions
-const categoryDescriptions: Record<ProjectCategory | "All", string> = {
-  All: "Explore our complete portfolio of projects across all categories. From residential masterpieces to commercial landmarks, discover the diverse range of architectural and design excellence we've delivered.",
+const categoryDescriptions: Record<ProjectCategory, string> = {
   Office:
     "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
-  "Hotel and Resort":
-    "Hotel and resort design should create relaxing, comfortable spaces using natural materials and light, flexible areas, and local culture for a unique, refreshing guest experience.",
-  Hospital:
-    "Hospital design should create clean, comfortable, calming environments promoting healing through natural light, soothing colours, clutter-free layouts, proper ventilation, noise control, and green spaces for patient and staff well-being.",
-  "Restaurant, Bar and Microbrewery":
-    "The design for a restaurant, bar, or microbrewery should blend inviting Blend mood lighting, seating, layout, materials, and branding use layered ambient, accent, and task lighting with dimmers for day-night transitions.",
-  Commercial:
-    "Effective commercial space design harmonizes functionality, aesthetics, and user experience through thoughtful space planning, layered lighting, durable materials, and flexible layouts. Clear circulation paths, defined zones, and ample room for fixtures and furniture ensure smooth flow.",
-  "Highways and Toll Plaza":
-    "Highway and toll plaza designs emphasizing efficiency, safety, and sustainability. Wide lanes, clear signage, and electronic tolling ensure smooth traffic flow and minimal delays. A continuous green belt of native trees and shrubs, alongside the road and around the plaza absorbs emissions, reduces noise, and manages rainwater naturally.",
-  "Modern Villa":
-    "Modern, classical, and neoclassical villa designs integrate spacious, minimalist layouts with clean lines, ornate moldings, carved woodwork, columns, chandeliers, and balanced symmetry. They combine contemporary simplicity with timeless elegance, using natural materials and refined detailing to create luxurious yet functional living spaces. This harmonious blend respects tradition while embracing modern comfort and sophistication.",
-  Gym: "Gym interior design prioritizes functionality and motivation through strategic zoning, appropriate lighting, durable materials, ventilation, mirrors for form checking, and energizing colour schemes.",
 };
 
 export default function ProjectsPage() {
@@ -40,28 +25,24 @@ export default function ProjectsPage() {
   const router = useRouter();
   const categoryParam = searchParams.get("category");
 
-  const initialCategory: ProjectCategory | "All" =
+  const initialCategory: ProjectCategory =
     categoryParam && categories.includes(categoryParam as ProjectCategory)
       ? (categoryParam as ProjectCategory)
-      : "All";
+      : categories[0];
 
-  const [selectedCategory, setSelectedCategory] = useState<
-    ProjectCategory | "All"
-  >(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>(
+    initialCategory
+  );
 
   // Update query param when category changes
   useEffect(() => {
     const newParams = new URLSearchParams();
-    if (selectedCategory !== "All") {
-      newParams.set("category", selectedCategory);
-    }
+    newParams.set("category", selectedCategory);
     router.push(`/projects?${newParams.toString()}`);
   }, [selectedCategory, router]);
 
   const filteredProjects = useMemo(() => {
-    return selectedCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+    return projects.filter((p) => p.category === selectedCategory);
   }, [selectedCategory]);
 
   return (

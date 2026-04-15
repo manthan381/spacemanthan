@@ -6,7 +6,6 @@ import Header from "@/components/shared/Header";
 import Hero from "@/components/shared/Hero";
 import IconContentSplit from "@/components/shared/IconContentSplit";
 import OrbitLayout from "@/components/shared/OrbitLayout";
-import ProjectsSection from "@/components/shared/ProjectsSection";
 import ThreeColumnImages from "@/components/shared/ThreeColumnImages";
 import TrustedBy from "@/components/shared/TrustedBy";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
@@ -29,7 +28,7 @@ export default async function Home() {
   const latestPosts = await getLatestPosts();
   const data = [
     {
-      imageSrc: "/images/projects/punjabi-haveli-jammu-1.jpg",
+      imageSrc: "/images/projects/cibt-office.jpg",
       title: `Architecture & Design`,
     },
     {
@@ -38,7 +37,7 @@ export default async function Home() {
     },
     {
       imageSrc: "/images/services/customizable-furniture-1.jpg",
-      title: "Office & House Furniture",
+      title: "modern & customize furniture",
     },
   ];
   const blocks = [
@@ -88,9 +87,6 @@ export default async function Home() {
           </h3>
           <OrbitLayout />
         </div>
-      </div>
-      <div className="bg-gray-900 py-20">
-        <ProjectsSection />
       </div>
       <div className="bg-[#dff1e0]/50 py-20">
         <ThreeColumnImages heading="Our Core Services" columns={data} />
