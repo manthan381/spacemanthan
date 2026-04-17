@@ -7,7 +7,7 @@ import Header from "@/components/shared/Header";
 import Hero from "@/components/shared/Hero";
 import HomeProjectShowcase from "@/components/shared/HomeProjectShowcase";
 import { ImpactSection } from "@/components/shared/ImpactSection";
-import ThreeColumnImages from "@/components/shared/ThreeColumnImages";
+
 import TrustedBy from "@/components/shared/TrustedBy";
 import TransformationStories from "@/components/shared/TransformationStories";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
@@ -27,20 +27,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const latestPosts = await getLatestPosts();
-  const data = [
-    {
-      imageSrc: "/images/projects/cibt-office.jpg",
-      title: `Architecture & Design`,
-    },
-    {
-      imageSrc: "/images/projects/urban-comany-office.webp",
-      title: "Office Design & Build",
-    },
-    {
-      imageSrc: "/images/services/customizable-furniture-1.jpg",
-      title: "modern & customize furniture",
-    },
-  ];
+
 
 
   return (

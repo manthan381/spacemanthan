@@ -58,7 +58,7 @@ function Card({
         viewport={{ once: true, amount: 0.1 }}
         className="flex flex-col gap-4 p-8 flex-1"
       >
-        {points.map((point, i) => (
+        {points.map((point) => (
           <motion.li key={point} variants={itemVariants} className="flex items-start gap-3">
             <span className="flex-shrink-0 relative top-[0.6rem] w-2 h-2 rounded-none bg-gray-900" />
             <p className="text-gray-700 text-base leading-relaxed">{point}</p>

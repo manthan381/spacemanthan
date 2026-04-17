@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Key, Layers, Palette, PenTool } from "lucide-react";
+import { Key, Palette } from "lucide-react";
 
 const services = [
   {
