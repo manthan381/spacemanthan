@@ -70,7 +70,7 @@ export function ClientTestimonials({
           {testimonials.map((item, idx) => (
             <SwiperSlide key={idx} className="h-auto">
               <motion.div
-                className="bg-white h-full rounded-2xl shadow-sm border flex flex-col text-center px-6 py-8 transition hover:shadow-md min-h-96"
+                className="bg-white h-full rounded-none shadow-sm border flex flex-col text-center px-6 py-8 transition hover:shadow-md min-h-96"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.05 }}
@@ -93,7 +93,7 @@ export function ClientTestimonials({
                       alt={item.name}
                       width={48}
                       height={48}
-                      className="rounded-full object-cover"
+                      className="rounded-none object-cover"
                     />
                   )}
                   <p className="mt-3 font-semibold text-gray-900">

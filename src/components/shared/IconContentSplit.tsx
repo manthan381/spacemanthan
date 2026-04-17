@@ -45,7 +45,7 @@ export default function IconContentSplit({
           {blocks.map((block, index) => (
             <motion.div
               key={index}
-              className="flex flex-col text-left border border-gray-100 bg-[#dff1e0] rounded-xl p-5 shadow-lg"
+              className="flex flex-col text-left border border-gray-100 bg-[#dff1e0] rounded-none p-5 shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -59,7 +59,7 @@ export default function IconContentSplit({
 
         {/* Right Image Column (2/3) */}
         <div className="md:col-span-2">
-          <div className="w-full h-full relative rounded-xl overflow-hidden">
+          <div className="w-full h-full relative rounded-none overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt || "Split layout image"}
@@ -87,11 +87,11 @@ export default function IconContentSplit({
       </div>
 
       <div className="text-center mt-5">
-        <Link href="https://benchfurnitures.com/">
-          <Button className="mt-5 text-lg cursor-pointer">
+        <Button asChild className="mt-5 text-lg cursor-pointer">
+          <Link href="https://benchfurnitures.com/" target="_blank" rel="noopener noreferrer">
             Visit Bench Furnitures Website
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
     </section>
   );

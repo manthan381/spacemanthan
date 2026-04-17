@@ -87,7 +87,7 @@ export default function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          "tiptap-editor min-h-72 rounded-b-lg border border-t-0 px-4 py-3 focus:outline-none",
+          "tiptap-editor min-h-72 rounded-none border border-t-0 px-4 py-3 focus:outline-none",
       },
     },
     onUpdate: ({ editor: currentEditor }) => {
@@ -168,7 +168,7 @@ export default function RichTextEditor({
 
   return (
     <div className="md:col-span-2 relative">
-      <div className="sticky top-16 z-20 flex flex-wrap items-center gap-1 rounded-t-lg border border-b-0 bg-[#eef3ff] p-2 shadow-sm">
+      <div className="sticky top-16 z-20 flex flex-wrap items-center gap-1 rounded-none border border-b-0 bg-[#eef3ff] p-2 shadow-sm">
         <select
           value={currentEditor.getAttributes("textStyle").fontSize || "16px"}
           onChange={(event) =>
@@ -318,7 +318,7 @@ export default function RichTextEditor({
               key={color}
               type="button"
               onClick={() => currentEditor.chain().focus().setColor(color).run()}
-              className="h-5 w-5 rounded-full border"
+              className="h-5 w-5 rounded-none border"
               style={{ backgroundColor: color }}
               title={`Text color ${color}`}
             />

@@ -5,19 +5,19 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Office & Commercial Spaces",
+    title: "Architecture & Design",
     description:
       "We redefine work environments with intelligent spatial design and precision-engineered structures to enhance productivity and reinforce brand identity.",
-    image: "/images/services/commercial-project.jpg",
+    image: "/images/projects/urban-comany-office.webp",
   },
   {
-    title: "Residential Projects",
+    title: "Office Design & Build",
     description:
       "We design and construct customized homes that seamlessly align with your lifestyle, creating beautiful, functional spaces.",
-    image: "/images/services/residential-project.jpg",
+    image: "/images/projects/cibt-office.jpg",
   },
   {
-    title: "Customizable Furnitures",
+    title: "modern & customize furniture",
     description:
       "We design and manufacture modular, space-efficient furniture precisely tailored to your style, requirements, and space dimensions.",
     image: "/images/services/customizable-furniture-2.jpg",
@@ -30,20 +30,20 @@ export default function WhatWeDoSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-gray-950 mb-4"
+          className="text-3xl sm:text-4xl font-bold text-black mb-10"
         >
           What We Do
         </motion.h2>
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
           className="text-gray-950 max-w-5xl mx-auto mb-10"
         >
@@ -65,7 +65,7 @@ export default function WhatWeDoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300 bg-white"
+              className="group rounded-none overflow-hidden shadow hover:shadow-lg transition-shadow duration-300 bg-white"
             >
               <div className="relative h-64 w-full">
                 <Image

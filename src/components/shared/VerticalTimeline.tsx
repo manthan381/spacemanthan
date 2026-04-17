@@ -57,7 +57,7 @@ export default function VerticalTimelineCompact() {
 
         <div className="relative">
           {/* Static Vertical Line */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 h-full bg-primary/30 rounded-full" />
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 h-full bg-primary/30 rounded-none" />
 
           {/* Steps */}
           <div className="flex flex-col gap-12">
@@ -84,7 +84,7 @@ export default function VerticalTimelineCompact() {
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-4 transition group-hover:shadow-md text-sm">
+                    <div className="bg-white border border-gray-200 rounded-none shadow-sm p-4 transition group-hover:shadow-md text-sm">
                       <h3 className="text-base font-semibold text-gray-800 mb-1">
                         {step.title}
                       </h3>
@@ -95,7 +95,7 @@ export default function VerticalTimelineCompact() {
                   </motion.div>
 
                   {/* Icon */}
-                  <div className="absolute left-1/2 -translate-x-1/2 bg-white border-2 border-primary shadow-md rounded-full p-2 z-20">
+                  <div className="absolute left-1/2 -translate-x-1/2 bg-white border-2 border-primary shadow-md rounded-none p-2 z-20">
                     <Icon size={20} className="text-primary" />
                   </div>
                 </div>

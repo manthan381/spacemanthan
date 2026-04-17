@@ -25,7 +25,7 @@ export function BlogGrid({ posts }: Readonly<BlogGridProps>) {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition"
+            className="bg-white border border-slate-200 rounded-none overflow-hidden shadow-sm hover:shadow-md transition"
           >
             <Image
               src={post.cover_image || "/images/blogs/blog-1.webp"}

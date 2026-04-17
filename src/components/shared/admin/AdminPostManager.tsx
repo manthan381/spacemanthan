@@ -282,7 +282,7 @@ export default function AdminPostManager() {
       <header className="sticky top-0 z-30 w-full bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#012169] flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-8 h-8 rounded-none bg-[#012169] flex items-center justify-center text-white font-bold text-lg">
               S
             </div>
             <span className="font-bold text-slate-900 tracking-tight text-lg">
@@ -292,7 +292,7 @@ export default function AdminPostManager() {
 
           <button
             onClick={logoutAdmin}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-none transition-all"
           >
             <LogOut size={18} />
             <span className="hidden sm:inline">Logout</span>
@@ -322,7 +322,7 @@ export default function AdminPostManager() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={startCreate}
-              className="bg-[#012169] text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-900/10 hover:shadow-blue-900/20 transition-all"
+              className="bg-[#012169] text-white px-6 py-3 rounded-none font-bold flex items-center justify-center gap-2 shadow-lg shadow-blue-900/10 hover:shadow-blue-900/20 transition-all"
             >
               <Plus size={20} />
               Create New Entry
@@ -330,7 +330,7 @@ export default function AdminPostManager() {
           ) : (
             <button
               onClick={() => setViewMode("list")}
-              className="flex items-center gap-2 px-4 py-3 text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-all"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-none transition-all"
             >
               <ArrowLeft size={18} />
               Cancel & Return
@@ -350,13 +350,13 @@ export default function AdminPostManager() {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search by title, slug, or content..."
-                  className="w-full bg-white border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-4 focus:ring-blue-900/10 focus:border-[#012169] transition-all"
+                  className="w-full bg-white border border-slate-200 rounded-none py-3.5 pl-12 pr-4 focus:outline-none focus:ring-4 focus:ring-blue-900/10 focus:border-[#012169] transition-all"
                 />
               </div>
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value as "all" | "draft" | "published")}
-                className="bg-white border border-slate-200 rounded-2xl py-3.5 px-4 font-bold text-slate-700 focus:outline-none focus:ring-4 focus:ring-blue-900/10 transition-all appearance-none cursor-pointer"
+                className="bg-white border border-slate-200 rounded-none py-3.5 px-4 font-bold text-slate-700 focus:outline-none focus:ring-4 focus:ring-blue-900/10 transition-all appearance-none cursor-pointer"
               >
                 <option value="all">All Content</option>
                 <option value="published">Published</option>
@@ -367,13 +367,13 @@ export default function AdminPostManager() {
             <AnimatePresence mode="popLayout">
               {loading ? (
                 <div className="flex flex-col items-center justify-center py-20 gap-4">
-                  <div className="w-12 h-12 border-4 border-slate-100 border-t-[#012169] rounded-full animate-spin" />
+                  <div className="w-12 h-12 border-4 border-slate-100 border-t-[#012169] rounded-none animate-spin" />
                   <p className="text-slate-400 font-medium animate-pulse">
                     Syncing Repository...
                   </p>
                 </div>
               ) : paginatedPosts.length === 0 ? (
-                <div className="bg-white border-2 border-dashed border-slate-200 rounded-3xl py-20 text-center">
+                <div className="bg-white border-2 border-dashed border-slate-200 rounded-none py-20 text-center">
                   <FileText size={48} className="mx-auto text-slate-200 mb-4" />
                   <h3 className="text-xl font-bold text-slate-400 uppercase tracking-widest">
                     Repository Empty
@@ -393,9 +393,9 @@ export default function AdminPostManager() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       key={post.id}
-                      className="group bg-white border border-slate-200 rounded-3xl p-4 md:p-5 flex flex-col md:flex-row items-center gap-6 hover:shadow-xl hover:shadow-blue-900/5 transition-all hover:border-blue-900/10"
+                      className="group bg-white border border-slate-200 rounded-none p-4 md:p-5 flex flex-col md:flex-row items-center gap-6 hover:shadow-xl hover:shadow-blue-900/5 transition-all hover:border-blue-900/10"
                     >
-                      <div className="w-full md:w-48 aspect-video rounded-2xl overflow-hidden bg-slate-50 flex-shrink-0 relative border border-slate-100">
+                      <div className="w-full md:w-48 aspect-video rounded-none overflow-hidden bg-slate-50 flex-shrink-0 relative border border-slate-100">
                         {post.cover_image ? (
                           <Image
                             src={post.cover_image}
@@ -410,7 +410,7 @@ export default function AdminPostManager() {
                         )}
                         <div className="absolute top-2 right-2">
                           <span
-                            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider shadow-sm ${
+                            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-none text-[10px] font-black uppercase tracking-wider shadow-sm ${
                               post.status === "published"
                                 ? "bg-emerald-500 text-white"
                                 : "bg-amber-500 text-white"
@@ -449,14 +449,14 @@ export default function AdminPostManager() {
                       <div className="flex items-center gap-2 border-t md:border-t-0 md:border-l border-slate-100 pt-4 md:pt-0 md:pl-6">
                         <button
                           onClick={() => startEdit(post)}
-                          className="p-3 text-slate-600 hover:text-[#012169] hover:bg-blue-50 rounded-xl transition-all"
+                          className="p-3 text-slate-600 hover:text-[#012169] hover:bg-blue-50 rounded-none transition-all"
                           title="Edit Post"
                         >
                           <Pencil size={20} />
                         </button>
                         <button
                           onClick={() => setDeleteConfirmId(post.id)}
-                          className="p-3 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"
+                          className="p-3 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-none transition-all"
                           title="Remove Entry"
                         >
                           <Trash2 size={22} />
@@ -478,11 +478,11 @@ export default function AdminPostManager() {
                 <button
                   disabled={currentPage <= 1}
                   onClick={() => setCurrentPage((p) => p - 1)}
-                  className="p-2 border border-slate-200 rounded-xl hover:bg-white hover:border-[#012169] disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                  className="p-2 border border-slate-200 rounded-none hover:bg-white hover:border-[#012169] disabled:opacity-30 disabled:hover:bg-transparent transition-all"
                 >
                   <ChevronLeft size={20} />
                 </button>
-                <div className="bg-white border border-slate-200 px-4 py-2 rounded-xl flex items-center gap-2">
+                <div className="bg-white border border-slate-200 px-4 py-2 rounded-none flex items-center gap-2">
                   <span className="font-black text-sm text-[#012169]">
                     {currentPage}
                   </span>
@@ -494,7 +494,7 @@ export default function AdminPostManager() {
                 <button
                   disabled={currentPage >= totalPages}
                   onClick={() => setCurrentPage((p) => p + 1)}
-                  className="p-2 border border-slate-200 rounded-xl hover:bg-white hover:border-[#012169] disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                  className="p-2 border border-slate-200 rounded-none hover:bg-white hover:border-[#012169] disabled:opacity-30 disabled:hover:bg-transparent transition-all"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -508,7 +508,7 @@ export default function AdminPostManager() {
             className="max-w-4xl mx-auto"
           >
             <form id="post-form" onSubmit={handleSavePost} className="space-y-8">
-              <section className="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 space-y-8 shadow-sm">
+              <section className="bg-white border border-slate-200 rounded-none p-6 md:p-10 space-y-8 shadow-sm">
                 <div className="space-y-4">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400">
                     Post Title *
@@ -535,7 +535,7 @@ export default function AdminPostManager() {
                       onChange={(e) =>
                         setForm((p) => ({ ...p, slug: e.target.value }))
                       }
-                      className="w-full bg-slate-50 border border-slate-100 rounded-xl p-3 text-sm focus:border-[#012169] focus:outline-none"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-none p-3 text-sm focus:border-[#012169] focus:outline-none"
                     />
                   </div>
                   <div className="space-y-2">
@@ -548,7 +548,7 @@ export default function AdminPostManager() {
                       onChange={(e) =>
                         setForm((p) => ({ ...p, authorName: e.target.value }))
                       }
-                      className="w-full bg-slate-50 border border-slate-100 rounded-xl p-3 text-sm focus:border-[#012169] focus:outline-none"
+                      className="w-full bg-slate-50 border border-slate-100 rounded-none p-3 text-sm focus:border-[#012169] focus:outline-none"
                       required
                     />
                   </div>
@@ -564,7 +564,7 @@ export default function AdminPostManager() {
                     onChange={(e) =>
                       setForm((p) => ({ ...p, excerpt: e.target.value }))
                     }
-                    className="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 text-slate-600 focus:border-[#012169] focus:outline-none min-h-[120px]"
+                    className="w-full bg-slate-50 border border-slate-100 rounded-none p-4 text-slate-600 focus:border-[#012169] focus:outline-none min-h-[120px]"
                   />
                 </div>
 
@@ -574,7 +574,7 @@ export default function AdminPostManager() {
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-4">
-                      <div className="aspect-video rounded-2xl bg-slate-50 border-2 border-dashed border-slate-200 relative overflow-hidden group">
+                      <div className="aspect-video rounded-none bg-slate-50 border-2 border-dashed border-slate-200 relative overflow-hidden group">
                         {form.coverImage ? (
                           <>
                             <Image
@@ -584,7 +584,7 @@ export default function AdminPostManager() {
                               alt="Preview"
                             />
                             <div className="absolute inset-0 bg-[#012169]/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer">
-                              <label className="cursor-pointer text-white font-black text-[10px] uppercase tracking-widest bg-[#012169]/60 px-3 py-2 rounded-lg backdrop-blur-md">
+                              <label className="cursor-pointer text-white font-black text-[10px] uppercase tracking-widest bg-[#012169]/60 px-3 py-2 rounded-none backdrop-blur-md">
                                 Change Image
                                 <input
                                   type="file"
@@ -609,7 +609,7 @@ export default function AdminPostManager() {
                         )}
                         {uploadingImage && (
                           <div className="absolute inset-0 bg-white/80 backdrop-blur-sm flex items-center justify-center">
-                            <div className="w-6 h-6 border-2 border-slate-100 border-t-[#012169] rounded-full animate-spin" />
+                            <div className="w-6 h-6 border-2 border-slate-100 border-t-[#012169] rounded-none animate-spin" />
                           </div>
                         )}
                       </div>
@@ -624,7 +624,7 @@ export default function AdminPostManager() {
                           onChange={(e) =>
                             setForm((p) => ({ ...p, coverImage: e.target.value }))
                           }
-                          className="w-full border border-slate-100 rounded-xl p-3 text-xs font-mono"
+                          className="w-full border border-slate-100 rounded-none p-3 text-xs font-mono"
                           placeholder="https://..."
                         />
                       </div>
@@ -640,7 +640,7 @@ export default function AdminPostManager() {
                               status: e.target.value as "draft" | "published",
                             }))
                           }
-                          className="w-full border border-slate-100 rounded-xl p-3 font-bold text-sm bg-white"
+                          className="w-full border border-slate-100 rounded-none p-3 font-bold text-sm bg-white"
                         >
                           <option value="draft">Save as Draft</option>
                           <option value="published">Publish Live</option>
@@ -654,7 +654,7 @@ export default function AdminPostManager() {
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400">
                     Blog Body Content
                   </label>
-                  <div className="border border-slate-100 rounded-2xl overflow-visible shadow-sm">
+                  <div className="border border-slate-100 rounded-none overflow-visible shadow-sm">
                     <RichTextEditor
                       value={form.content}
                       onChange={(val) => setForm((p) => ({ ...p, content: val }))}
@@ -663,7 +663,7 @@ export default function AdminPostManager() {
                 </div>
               </section>
 
-              <section className="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 space-y-6 shadow-sm">
+              <section className="bg-white border border-slate-200 rounded-none p-6 md:p-10 space-y-6 shadow-sm">
                 <div className="flex items-center gap-2 border-b border-slate-100 pb-4">
                   <h2 className="text-lg font-black uppercase tracking-tight text-[#012169]">
                     Search Optimization
@@ -679,7 +679,7 @@ export default function AdminPostManager() {
                       onChange={(e) =>
                         setForm((p) => ({ ...p, metaTitle: e.target.value }))
                       }
-                      className="w-full border border-slate-100 rounded-xl p-4 focus:border-[#012169] focus:outline-none"
+                      className="w-full border border-slate-100 rounded-none p-4 focus:border-[#012169] focus:outline-none"
                       placeholder="SEO optimized title..."
                     />
                   </div>
@@ -692,7 +692,7 @@ export default function AdminPostManager() {
                       onChange={(e) =>
                         setForm((p) => ({ ...p, metaDesc: e.target.value }))
                       }
-                      className="w-full border border-slate-100 rounded-xl p-4 min-h-[100px] focus:border-[#012169] focus:outline-none"
+                      className="w-full border border-slate-100 rounded-none p-4 min-h-[100px] focus:border-[#012169] focus:outline-none"
                       placeholder="SEO optimized description..."
                     />
                   </div>
@@ -705,7 +705,7 @@ export default function AdminPostManager() {
                       onChange={(e) =>
                         setForm((p) => ({ ...p, metaKeyword: e.target.value }))
                       }
-                      className="w-full border border-slate-100 rounded-xl p-4 focus:border-[#012169] focus:outline-none"
+                      className="w-full border border-slate-100 rounded-none p-4 focus:border-[#012169] focus:outline-none"
                       placeholder="keyword1, keyword2, keyword3..."
                     />
                   </div>
@@ -716,7 +716,7 @@ export default function AdminPostManager() {
                 <button
                   disabled={saving}
                   type="submit"
-                  className="w-full sm:w-auto min-w-[200px] bg-[#012169] text-white py-4 px-10 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#0a2a6d] disabled:opacity-50 transition-all shadow-xl shadow-blue-900/10"
+                  className="w-full sm:w-auto min-w-[200px] bg-[#012169] text-white py-4 px-10 rounded-none font-black text-sm uppercase tracking-widest hover:bg-[#0a2a6d] disabled:opacity-50 transition-all shadow-xl shadow-blue-900/10"
                 >
                   {saving
                     ? "Processing..."
@@ -772,14 +772,14 @@ export default function AdminPostManager() {
                 <div className="flex items-center justify-end gap-3">
                   <button
                     onClick={() => setDeleteConfirmId(null)}
-                    className="px-8 py-3 rounded-xl border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all min-w-[120px]"
+                    className="px-8 py-3 rounded-none border border-slate-200 text-slate-700 font-bold hover:bg-slate-50 transition-all min-w-[120px]"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={() => removePost(deleteConfirmId)}
                     disabled={saving}
-                    className="px-8 py-3 rounded-xl bg-[#ef4444] text-white font-black hover:bg-red-600 transition-all min-w-[120px] shadow-lg shadow-red-200"
+                    className="px-8 py-3 rounded-none bg-[#ef4444] text-white font-black hover:bg-red-600 transition-all min-w-[120px] shadow-lg shadow-red-200"
                   >
                     {saving ? "Deleting..." : "Delete"}
                   </button>
@@ -796,7 +796,7 @@ export default function AdminPostManager() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 right-6 bg-white border border-slate-200 shadow-lg rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700"
+            className="fixed bottom-6 right-6 bg-white border border-slate-200 shadow-lg rounded-none px-4 py-3 text-sm font-semibold text-slate-700"
           >
             {message}
           </motion.div>

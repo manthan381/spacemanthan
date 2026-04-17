@@ -1,16 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "Expertise", href: "/expertise" },
+  { 
+    name: "Expertise", 
+    href: "/expertise",
+    subLinks: [
+      { name: "Build", href: "/projects?category=Office+%26+Residence" },
+      { name: "Furniture", href: "/services/furniture" },
+    ]
+  },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact-us" },
@@ -20,7 +25,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative z-50 w-full border border-b-gray-50 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border border-b-gray-50 shadow-sm bg-white/75 backdrop-blur-md">
       {/* Background effect */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white via-gray-50 to-gray-100 opacity-90">
         <svg
@@ -59,26 +64,31 @@ export default function Header() {
 
         <nav className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[#012169] hover:text-[#012169] transition font-semibold"
-            >
-              {link.name}
-            </Link>
+            <div key={link.name} className="relative group">
+              <Link
+                href={link.href}
+                className="text-[#012169] hover:text-[#012169] transition font-semibold"
+              >
+                {link.name}
+              </Link>
+              {link.subLinks && (
+                <div className="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <div className="bg-white border border-gray-100 shadow-xl rounded-none py-2 w-48 flex flex-col">
+                    {link.subLinks.map((sub) => (
+                      <Link
+                        key={sub.name}
+                        href={sub.href}
+                        className="px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#012169] transition"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
-
-        <div className="hidden md:block">
-          <Link href="/contact-us">
-            <Button
-              variant="outline"
-              className="bg-[#012169] text-white hover:bg-gray-100 hover:text-[#012169]"
-            >
-              Get in Touch
-            </Button>
-          </Link>
-        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">

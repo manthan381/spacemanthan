@@ -24,14 +24,7 @@ const STATIC_ROUTES: Array<{
 ];
 
 const PROJECT_CATEGORIES = [
-  "Office",
-  "Hotel and Resort",
-  "Hospital",
-  "Restaurant, Bar and Microbrewery",
-  "Commercial",
-  "Highways and Toll Plaza",
-  "Modern Villa",
-  "Gym",
+  "Office & Residence",
 ] as const;
 
 export const revalidate = 3600;

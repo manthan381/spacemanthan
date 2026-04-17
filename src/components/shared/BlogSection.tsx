@@ -57,14 +57,14 @@ export default function BlogSection({
   const blogs = posts.length > 0 ? posts : defaultBlogs;
 
   return (
-    <section className="pt-16 pb-4">
+    <section>
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl text-[#012169] mb-4 font-bold"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-3xl sm:text-4xl text-black mb-10 font-bold"
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
         >
           Top Industry <span>Insights</span>
@@ -73,9 +73,9 @@ export default function BlogSection({
         {/* Description */}
         <motion.p
           className="text-slate-600 max-w-2xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
         >
           Stay updated with the latest trends, techniques, and perspectives
@@ -87,7 +87,7 @@ export default function BlogSection({
           {blogs.map((blog, i) => (
             <motion.div
               key={blog.slug}
-              className="bg-slate-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+              className="bg-white border text-left rounded-none shadow hover:shadow-lg overflow-hidden transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -116,7 +116,7 @@ export default function BlogSection({
                 </p>
                 <Link
                   href={`/blog/${blog.slug}`}
-                  className="text-[#012169] hover:underline text-sm font-medium"
+                  className="text-black hover:underline text-sm font-medium"
                 >
                   Read More →
                 </Link>

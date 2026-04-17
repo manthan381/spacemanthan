@@ -18,7 +18,7 @@ export function VisionMission() {
 
         <div className="grid md:grid-cols-2 gap-10 text-left">
           <motion.div
-            className="bg-white rounded-xl shadow-md p-6 border"
+            className="bg-white rounded-none shadow-md p-6 border"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -41,7 +41,7 @@ export function VisionMission() {
           </motion.div>
 
           <motion.div
-            className="bg-white rounded-xl shadow-md p-6 border"
+            className="bg-white rounded-none shadow-md p-6 border"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}

@@ -18,9 +18,9 @@ export default function ThreeColumnImages({
   columns,
 }: ThreeColumnImagesProps) {
   return (
-    <section className="pb-20 text-center">
+    <section className="text-center">
       <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-20"
+        className="text-3xl md:text-4xl font-bold text-black mb-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -39,7 +39,7 @@ export default function ThreeColumnImages({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
           >
-            <div className="w-72 h-72 rounded-full overflow-hidden border-2 border-gray-100">
+            <div className="w-72 h-72 rounded-none overflow-hidden border-2 border-gray-100">
               <Image
                 src={col.imageSrc}
                 alt={col.title}

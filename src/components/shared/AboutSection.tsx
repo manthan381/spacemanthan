@@ -5,54 +5,99 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left: Heading + Text */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl sm:text-4xl text-gray-950 mb-6 font-bold">
-            Personalized Spaces with Purpose
-          </h2>
-          <p className="text-gray-900 text-lg leading-relaxed text-wrap text-justify">
-            Space Manthan is a comprehensive design and build partner, committed
-            to realizing your vision through a deep understanding of the unique
-            essence of each space. As an ISO 9001:2015 certified organization,
-            we offer end-to-end solutions encompassing architecture, interior
-            design, construction, and custom furniture manufacturing—all
-            seamlessly integrated under one roof. Our team transcends basic plan
-            execution, appreciating that every project reflects your aspirations
-            and objectives. Utilizing advanced AI-driven tools, we ensure
-            projects are delivered on schedule and within budget, while
-            maintaining exceptional focus on the nuanced design elements that
-            distinguish each space. Whether executing residential renovations,
-            office designs, or commercial developments, we uphold the highest
-            standards of professionalism and care. Selecting Space Manthan means
-            engaging a partner dedicated to creating authentic, purposeful
-            environments that align with your personality and operational needs,
-            realized with precision and passion.
-          </p>
-        </motion.div>
+    <>
+      <section className="bg-white pt-28 pb-10 px-6 sm:px-10 lg:px-24 border-b border-gray-100">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-sm font-semibold tracking-[0.25em] text-black uppercase mb-5"
+            >
+              established 2009 · gurugram, india
+            </motion.p>
 
-        {/* Right: Image */}
-        <motion.div
-          className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <Image
-            src="/images/bg/modern-office-space-1.png" // Replace with your image path
-            alt="About Bench Architects"
-            fill
-            className="object-cover"
-          />
-        </motion.div>
-      </div>
-    </section>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="text-4xl md:text-5xl font-bold text-black lowercase leading-tight tracking-tight mb-5"
+            >
+              crafting spaces <br />
+              <span className="text-black">that</span> endure.
+            </motion.h1>
+
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              style={{ transformOrigin: "left" }}
+              className="w-16 h-[2px] bg-black mb-5"
+            />
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="max-w-md text-black font-light text-base lowercase leading-relaxed"
+            >
+              space manthan's leading full-service architecture & design firm —
+              blending global perspective with local craftsmanship to create
+              spaces that are functional, future-ready, and enduring.
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="relative w-full h-[380px] md:h-[460px] rounded-none overflow-hidden"
+          >
+            <Image
+              src="/images/bg/modern-office-space-1.png"
+              alt="Space Manthan — architectural design"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="w-full bg-white pt-12 pb-16 px-6 sm:px-10 lg:px-24">
+        <div className="max-w-[1600px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20"
+          >
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-black lowercase tracking-tight mb-6">
+                about space manthan
+              </h2>
+              <p className="text-gray-500 font-light text-base leading-relaxed mb-4">
+                founded in 2009 by visionary entrepreneur <strong className="text-gray-800 font-semibold">prince aryan</strong>, space manthan is one of india's leading full-service architectural and design firms. with over <strong className="text-gray-800 font-semibold">15 years of expertise</strong> and <strong className="text-gray-800 font-semibold">1000+ completed projects</strong>, we specialize in creating innovative, sustainable, and timeless spaces.
+              </p>
+              <p className="text-gray-500 font-light text-base leading-relaxed">
+                our multidisciplinary approach spans residential, commercial, institutional, hospitality, and interiors — offering complete solutions from concept development to turnkey execution.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-black lowercase tracking-tight mb-6">
+                our philosophy
+              </h2>
+              <p className="text-gray-500 font-light text-base leading-relaxed mb-4">
+                guided by a philosophy of simplicity, elegance, and purposeful planning, we blend global design perspectives with local craftsmanship. every project reflects refined aesthetics, sustainability, and innovation.
+              </p>
+              <p className="text-gray-500 font-light text-base leading-relaxed">
+                supported by our in-house facility for bespoke furniture, custom millwork, wardrobes, and curated décor, we deliver seamless, high-quality results tailored to each client's vision.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -73,15 +73,15 @@ export default function FeatureSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-shadow duration-300 text-center"
+              className="bg-white p-6 rounded-none shadow hover:shadow-lg transition-shadow duration-300 text-center"
             >
-              <div className="mb-4 bg-gray-100 p-1 rounded-full inline-block">
+              <div className="mb-4 bg-gray-100 p-1 rounded-none inline-block">
                 <div className="relative h-40 w-40">
                   <Image
                     src={feature.image}
                     alt={feature.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-full"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-none"
                   />
                 </div>
               </div>

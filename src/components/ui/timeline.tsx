@@ -48,9 +48,9 @@ const Timeline: React.FC<TimelineProps> = ({ items, className }) => {
                   ></div>
 
                   {/* Content card */}
-                  <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 relative z-10">
+                  <div className="bg-white rounded-none shadow-lg border border-gray-200 p-6 relative z-10">
                     {/* Status indicator */}
-                    <div className="inline-flex items-center px-2.5 py-0.5 bg-gray-100 rounded-full text-xs font-medium mb-3">
+                    <div className="inline-flex items-center px-2.5 py-0.5 bg-gray-100 rounded-none text-xs font-medium mb-3">
                       Step {item.id}
                     </div>
 
@@ -64,7 +64,7 @@ const Timeline: React.FC<TimelineProps> = ({ items, className }) => {
                 </div>
 
                 {/* Step number circle on the main line */}
-                <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-lg z-20 relative bg-gray-400 transition-all duration-300 hover:scale-110">
+                <div className="w-12 h-12 rounded-none flex items-center justify-center font-bold text-white shadow-lg z-20 relative bg-gray-400 transition-all duration-300 hover:scale-110">
                   {item.status === "completed" ? (
                     <svg
                       className="w-6 h-6"
