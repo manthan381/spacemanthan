@@ -39,7 +39,7 @@ export default function ThreeColumnImages({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6 }}
           >
-            <div className="w-72 h-72 rounded-full overflow-hidden border-2 border-gray-100">
+            <div className="w-72 h-72 rounded-none overflow-hidden border-2 border-gray-100">
               <Image
                 src={col.imageSrc}
                 alt={col.title}

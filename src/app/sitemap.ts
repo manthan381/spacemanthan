@@ -24,7 +24,7 @@ const STATIC_ROUTES: Array<{
 ];
 
 const PROJECT_CATEGORIES = [
-  "Office",
+  "Office & Residence",
 ] as const;
 
 export const revalidate = 3600;

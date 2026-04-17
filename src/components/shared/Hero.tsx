@@ -89,7 +89,7 @@ export default function Hero() {
               initial={{ x: 60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-xl p-6 space-y-4 w-full max-w-sm mx-auto"
+              className="bg-white rounded-none shadow-xl p-6 space-y-4 w-full max-w-sm mx-auto"
             >
               <h2 className="text-xl font-bold mb-5 text-gray-900">
                 Book a Consultation

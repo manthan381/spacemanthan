@@ -94,7 +94,7 @@ export default function ProjectsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-xl shadow hover:shadow-md transition"
+                  className="group relative overflow-hidden rounded-none shadow hover:shadow-md transition"
                 >
                   <div className="relative aspect-video w-full">
                     <Link

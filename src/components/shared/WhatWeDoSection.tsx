@@ -65,7 +65,7 @@ export default function WhatWeDoSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow duration-300 bg-white"
+              className="group rounded-none overflow-hidden shadow hover:shadow-lg transition-shadow duration-300 bg-white"
             >
               <div className="relative h-64 w-full">
                 <Image

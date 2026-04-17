@@ -1,16 +1,13 @@
-import AboutSection from "@/components/shared/AboutSection";
-import BlogSection from "@/components/shared/BlogSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
-import ProjectsSection from "@/components/shared/ProjectsSection";
 import { StatsSection } from "@/components/shared/StatsSection";
 import { TeamSection } from "@/components/shared/TeamSection";
-import TrustedBy from "@/components/shared/TrustedBy";
-import { VisionMission } from "@/components/shared/VisionMission";
-import { WhyChooseUs } from "@/components/shared/WhyChooseUs";
 import type { Metadata } from "next";
 import Image from "next/image";
+import AboutSection from "../../components/shared/AboutSection";
+import { AboutServicesSection } from "../../components/shared/AboutServicesSection";
+import { MissionVisionSection } from "../../components/shared/MissionVisionSection";
 
 export const metadata: Metadata = {
   title: "About Space Manthan | Our Story, Team & Process",
@@ -28,12 +25,9 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
-      <TrustedBy />
       <StatsSection />
-      <div className="bg-gray-900 py-20">
-        <ProjectsSection />
-      </div>
-      <VisionMission />
+      <MissionVisionSection />
+      <AboutServicesSection />
       <TeamSection />
       <div className="bg-gray-50 py-20 mx-auto">
         <div className="text-center">
@@ -57,10 +51,6 @@ export default function Home() {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </div>
-      </div>
-      <WhyChooseUs />
-      <div className="bg-white py-20">
-        <BlogSection />
       </div>
       <ContactCTA />
       <Footer />

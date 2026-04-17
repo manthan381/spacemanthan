@@ -87,7 +87,7 @@ export default function BlogSection({
           {blogs.map((blog, i) => (
             <motion.div
               key={blog.slug}
-              className="bg-slate-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition"
+              className="bg-white border text-left rounded-none shadow hover:shadow-lg overflow-hidden transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}

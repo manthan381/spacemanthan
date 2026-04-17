@@ -1,5 +1,6 @@
 // Next.js
 import { getSiteUrl, SITE_NAME } from "@/lib/site";
+import WhatsAppWidget from "@/components/shared/WhatsAppWidget";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -61,6 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {children}
+        <WhatsAppWidget />
       </body>
     </html>
   );

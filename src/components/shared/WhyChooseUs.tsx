@@ -36,7 +36,7 @@ export function WhyChooseUs() {
           {reasons.map((reason, i) => (
             <motion.div
               key={i}
-              className="bg-gray-50 p-6 rounded-xl shadow-sm border text-left group hover:shadow-lg transition"
+              className="bg-gray-50 p-6 rounded-none shadow-sm border text-left group hover:shadow-lg transition"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}

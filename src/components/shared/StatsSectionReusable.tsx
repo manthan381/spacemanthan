@@ -34,7 +34,7 @@ export function StatsSectionReusable({
           {stats.map((stat, i) => (
             <motion.div
               key={i}
-              className="bg-white p-6 rounded-xl shadow border text-center"
+              className="bg-white p-6 rounded-none shadow border text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}

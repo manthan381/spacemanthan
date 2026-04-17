@@ -80,7 +80,7 @@ export default function SixStepProcess() {
                   viewport={{ once: true }}
                   className="flex flex-col items-center text-center max-w-[150px]"
                 >
-                  <div className="bg-white rounded-full p-4 shadow-lg mb-3">
+                  <div className="bg-white rounded-none p-4 shadow-lg mb-3">
                     <step.icon size={32} className="text-primary" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-800">
