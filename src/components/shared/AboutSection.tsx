@@ -33,7 +33,7 @@ export default function AboutSection() {
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               style={{ transformOrigin: "left" }}
-              className="w-16 h-[2px] bg-[#eb5e22] mb-5"
+              className="w-16 h-[2px] bg-black mb-5"
             />
 
             <motion.p

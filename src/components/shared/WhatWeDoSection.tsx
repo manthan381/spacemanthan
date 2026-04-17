@@ -5,19 +5,19 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Office & Commercial Spaces",
+    title: "Architecture & Design",
     description:
       "We redefine work environments with intelligent spatial design and precision-engineered structures to enhance productivity and reinforce brand identity.",
-    image: "/images/services/commercial-project.jpg",
+    image: "/images/projects/urban-comany-office.webp",
   },
   {
-    title: "Residential Projects",
+    title: "Office Design & Build",
     description:
       "We design and construct customized homes that seamlessly align with your lifestyle, creating beautiful, functional spaces.",
-    image: "/images/services/residential-project.jpg",
+    image: "/images/projects/cibt-office.jpg",
   },
   {
-    title: "Customizable Furnitures",
+    title: "modern & customize furniture",
     description:
       "We design and manufacture modular, space-efficient furniture precisely tailored to your style, requirements, and space dimensions.",
     image: "/images/services/customizable-furniture-2.jpg",
@@ -34,7 +34,7 @@ export default function WhatWeDoSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-gray-950 mb-4"
+          className="text-3xl sm:text-4xl font-bold text-black mb-10"
         >
           What We Do
         </motion.h2>

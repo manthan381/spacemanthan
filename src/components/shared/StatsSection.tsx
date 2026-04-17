@@ -63,7 +63,7 @@ export function StatsSection() {
               viewport={{ once: true }}
               className="group flex flex-col items-center text-center"
             >
-              <div className="mb-4 text-gray-900 group-hover:text-[#eb5e22] transition-colors duration-300">
+              <div className="mb-4 text-gray-900 group-hover:text-black transition-colors duration-300">
                 <stat.icon size={48} strokeWidth={1} />
               </div>
               <div className="mb-4">

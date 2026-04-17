@@ -1,5 +1,6 @@
 import BlogSection from "@/components/shared/BlogSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { FAQSection } from "@/components/shared/FAQSection";
 import Footer from "@/components/shared/Footer";
 import { GalleryCTASection } from "@/components/shared/GalleryCTASection";
 import Header from "@/components/shared/Header";
@@ -55,16 +56,14 @@ export default async function Home() {
         imageSrc="/images/projects/feb-hotel/10.webp"
         imageAlt="Modern Collaborative Office Design"
       />
-      <div className="mt-48 md:mt-5 pb-10">
+      <div className="py-12">
         <TrustedBy />
       </div>
-      <div className="bg-white py-20">
+      <div className="bg-white py-12">
         <WhatWeDoSection />
       </div>
 
-      <div className="bg-white py-20">
-        <ThreeColumnImages heading="Our Core Services" columns={data} />
-      </div>
+
       <GalleryCTASection
         titlePrefix="Reimagine your"
         titleHighlight="workplace experience"
@@ -78,9 +77,10 @@ export default async function Home() {
 
       <HomeProjectShowcase />
 
-      <div className="pt-20 pb-10 border-t-2 border-gray-100">
+      <div className="py-12 border-t-2 border-gray-100">
         <BlogSection posts={latestPosts} />
       </div>
+      <FAQSection />
       <ContactCTA />
       <Footer />
     </main>

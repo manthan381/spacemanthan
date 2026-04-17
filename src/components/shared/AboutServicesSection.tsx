@@ -44,7 +44,7 @@ export function AboutServicesSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-black mb-4">
-            our <span className="font-bold text-[#eb5e22]">expertise</span>
+            our <span className="font-bold text-black">expertise</span>
           </h2>
           <p className="max-w-2xl mx-auto text-gray-500">
             delivering end-to-end design and build solutions with precision, creativity, and a commitment to excellence.

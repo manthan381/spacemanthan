@@ -60,11 +60,11 @@ const showcaseItems: ShowcaseItem[] = [
 
 export default function HomeProjectShowcase() {
   return (
-    <section className="bg-white pt-12 pb-24 md:pt-16 md:pb-32">
+    <section className="bg-white pt-12 pb-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 md:mb-28">
           <p className="text-xs tracking-[0.25em] text-[#777] uppercase">Featured Work</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#101010] md:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-black md:text-4xl">
             Curated Office Interiors
           </h2>
         </div>

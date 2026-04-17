@@ -1,41 +1,70 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { animate, motion, useInView, useMotionValue, useTransform } from "framer-motion";
 import { CheckSquare, Maximize, Sparkles, Star } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const stats = [
   {
     icon: Maximize,
-    value: "80+",
+    value: "90",
+    suffix: "+",
     label: "Mn Sq. Ft.",
     sublabel: "Designed & Delivered",
   },
   {
     icon: Sparkles,
-    value: "100+",
+    value: "100",
+    suffix: "+",
     label: "Award Winning",
     sublabel: "Projects",
   },
   {
     icon: Star,
-    value: "98%",
+    value: "98",
+    suffix: "%",
     label: "Client Satisfaction",
     sublabel: "Rate",
   },
   {
     icon: CheckSquare,
-    value: "15+",
+    value: "15",
+    suffix: "+",
     label: "Years of",
     sublabel: "Expertise",
   },
 ];
+
+function CountUp({ value, suffix }: { value: string; suffix: string }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, parseInt(value), {
+        duration: 2,
+        ease: "easeOut",
+      });
+      return controls.stop;
+    }
+  }, [isInView, count, value]);
+
+  return (
+    <span ref={ref} className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </span>
+  );
+}
 
 export function ImpactSection() {
   return (
     <section className="py-12 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-normal text-gray-900 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
             We <span className="font-bold">deliver</span> impact
           </h2>
         </div>
@@ -57,9 +86,7 @@ export function ImpactSection() {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">
-                  {stat.value}
-                </span>
+                <CountUp value={stat.value} suffix={stat.suffix} />
                 <div className="flex flex-col">
                   <span className="text-sm md:text-base font-bold text-gray-700 uppercase tracking-wide">
                     {stat.label}

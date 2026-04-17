@@ -57,11 +57,11 @@ export default function BlogSection({
   const blogs = posts.length > 0 ? posts : defaultBlogs;
 
   return (
-    <section className="pt-16 pb-4">
+    <section>
       <div className="max-w-[1600px] w-full mx-auto px-6 sm:px-10 lg:px-24 text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl sm:text-4xl text-[#012169] mb-4 font-bold"
+          className="text-3xl sm:text-4xl text-black mb-10 font-bold"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -116,7 +116,7 @@ export default function BlogSection({
                 </p>
                 <Link
                   href={`/blog/${blog.slug}`}
-                  className="text-[#012169] hover:underline text-sm font-medium"
+                  className="text-black hover:underline text-sm font-medium"
                 >
                   Read More →
                 </Link>

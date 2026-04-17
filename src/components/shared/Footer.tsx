@@ -2,14 +2,18 @@
 
 import {
   CalendarClock,
-  Facebook,
-  Instagram,
   Mail,
   MapPin,
   MessageCircle,
   Smartphone,
-  Youtube,
 } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaXTwitter,
+} from "react-icons/fa6";
 import Link from "next/link";
 
 export default function Footer() {
@@ -33,22 +37,44 @@ export default function Footer() {
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/people/Space-Manthan/61583762248808/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Facebook size={30} />
+                  <FaFacebookF size={28} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/spacemanthan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Instagram size={30} />
+                  <FaInstagram size={28} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/space-manthan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <Youtube size={30} />
+                  <FaLinkedinIn size={28} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@SpaceManthan555"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  <FaYoutube size={28} />
+                </a>
+                <a
+                  href="https://x.com/ManthanSpace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  <FaXTwitter size={28} />
                 </a>
               </div>
             </div>
