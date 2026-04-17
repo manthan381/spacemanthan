@@ -102,6 +102,7 @@ export default function Hero() {
                 value={form.name}
                 onChange={handleChange}
                 required
+                suppressHydrationWarning
               />
               <Input
                 name="company"
@@ -109,6 +110,7 @@ export default function Hero() {
                 className="bg-gray-50 py-5"
                 value={form.company}
                 onChange={handleChange}
+                suppressHydrationWarning
               />
               <Input
                 name="email"
@@ -118,6 +120,7 @@ export default function Hero() {
                 value={form.email}
                 onChange={handleChange}
                 required
+                suppressHydrationWarning
               />
               <Input
                 name="phone"
@@ -127,10 +130,11 @@ export default function Hero() {
                 value={form.phone}
                 onChange={handleChange}
                 required
+                suppressHydrationWarning
               />
 
               <Select onValueChange={handleAreaChange} value={form.area}>
-                <SelectTrigger className="bg-gray-50 w-full py-5">
+                <SelectTrigger className="bg-gray-50 w-full py-5" suppressHydrationWarning>
                   <SelectValue placeholder="Select Carpet Area" />
                 </SelectTrigger>
                 <SelectContent>

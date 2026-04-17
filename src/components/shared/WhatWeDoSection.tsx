@@ -30,9 +30,9 @@ export default function WhatWeDoSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
           className="text-3xl sm:text-4xl font-bold text-black mb-10"
         >
@@ -41,9 +41,9 @@ export default function WhatWeDoSection() {
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
           className="text-gray-950 max-w-5xl mx-auto mb-10"
         >

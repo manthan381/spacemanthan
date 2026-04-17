@@ -62,9 +62,9 @@ export default function BlogSection({
         {/* Heading */}
         <motion.h2
           className="text-3xl sm:text-4xl text-black mb-10 font-bold"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
         >
           Top Industry <span>Insights</span>
@@ -73,9 +73,9 @@ export default function BlogSection({
         {/* Description */}
         <motion.p
           className="text-slate-600 max-w-2xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
           viewport={{ once: true }}
         >
           Stay updated with the latest trends, techniques, and perspectives

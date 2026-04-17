@@ -130,7 +130,7 @@ export default function Footer() {
                 <div>
                   <MapPin
                     size={28}
-                    className="bg-gray-100 text-gray-900 p-1 rounded-none"
+                    className="text-white"
                   />
                 </div>
                 <div>
@@ -145,7 +145,7 @@ export default function Footer() {
                 <div>
                   <Smartphone
                     size={28}
-                    className="bg-gray-100 text-gray-900 p-1 rounded-none"
+                    className="text-white"
                   />
                 </div>
                 <div>+91-9958097927, 0124-4446207</div>
@@ -154,7 +154,7 @@ export default function Footer() {
                 <div>
                   <Mail
                     size={28}
-                    className="bg-gray-100 text-gray-900 p-1 rounded-none"
+                    className="text-white"
                   />
                 </div>
                 <div>hello@spacemanthan.com</div>
@@ -163,7 +163,7 @@ export default function Footer() {
                 <div>
                   <MessageCircle
                     size={28}
-                    className="bg-gray-100 text-gray-900 p-1 rounded-none"
+                    className="text-white"
                   />
                 </div>
                 <div>WhatsApp: +91 9218028364</div>
@@ -172,7 +172,7 @@ export default function Footer() {
                 <div>
                   <CalendarClock
                     size={28}
-                    className="bg-gray-100 text-gray-900 p-1 rounded-none"
+                    className="text-white"
                   />
                 </div>
                 <div>Mon - Sat: 9:30 AM to 6:30 PM</div>

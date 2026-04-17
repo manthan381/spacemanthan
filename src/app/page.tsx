@@ -9,6 +9,7 @@ import HomeProjectShowcase from "@/components/shared/HomeProjectShowcase";
 import { ImpactSection } from "@/components/shared/ImpactSection";
 import ThreeColumnImages from "@/components/shared/ThreeColumnImages";
 import TrustedBy from "@/components/shared/TrustedBy";
+import TransformationStories from "@/components/shared/TransformationStories";
 import WhatWeDoSection from "@/components/shared/WhatWeDoSection";
 import { getLatestPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
@@ -59,6 +60,9 @@ export default async function Home() {
       <div className="py-12">
         <TrustedBy />
       </div>
+      
+      <TransformationStories />
+      
       <div className="bg-white py-12">
         <WhatWeDoSection />
       </div>

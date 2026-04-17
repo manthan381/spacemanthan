@@ -64,9 +64,15 @@ export function ImpactSection() {
     <section className="py-12 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight">
+          <motion.h2 
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-black tracking-tight"
+          >
             We <span className="font-bold">deliver</span> impact
-          </h2>
+          </motion.h2>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
@@ -74,9 +80,9 @@ export function ImpactSection() {
             <motion.div
               key={i}
               className="flex flex-col items-center text-center group"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
               viewport={{ once: true }}
             >
               <div className="mb-6 relative">

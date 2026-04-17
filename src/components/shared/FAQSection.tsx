@@ -50,9 +50,10 @@ export function FAQSection() {
         <div className="text-center mb-16">
           <motion.h2 
             className="text-2xl md:text-3xl font-bold text-black mb-6 tracking-tight"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
           >
             Frequently Wondered <span className="font-bold">Whys</span>
           </motion.h2>

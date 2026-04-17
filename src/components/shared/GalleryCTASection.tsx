@@ -37,9 +37,9 @@ export function GalleryCTASection({
           {/* Text Content */}
           <motion.div
             className={reverse ? "lg:order-2" : "lg:order-1"}
-            initial={{ opacity: 0, x: reverse ? 50 : -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
             viewport={{ once: true }}
           >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-800 leading-tight mb-4">
