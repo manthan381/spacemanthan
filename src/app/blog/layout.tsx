@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Space Manthan Blog | Architecture & Design Insights",
+  title: "Interior Design Insights | Construction Trends | Space Manthan",
   description:
-    "Read the latest architecture, interior design, and construction insights from Space Manthan.",
+    "Ready to transform your space? Read our blog for expert insights on architectural standards and tech-driven construction, then book a free consultation with the Space Manthan team.",
   keywords:
-    "architecture blog, interior design tips, construction insights, Space Manthan",
+    "boss office table design, office wall design, boss office cabin design, low budget small office interior design, office cabin design",
   alternates: {
     canonical: "/blog",
   },

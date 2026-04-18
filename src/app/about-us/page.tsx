@@ -9,11 +9,11 @@ import { AboutServicesSection } from "../../components/shared/AboutServicesSecti
 import { MissionVisionSection } from "../../components/shared/MissionVisionSection";
 
 export const metadata: Metadata = {
-  title: "About Space Manthan | Our Story, Team & Process",
+  title: "Interior Design Excellence | 15+ years of experience and 1,000+ completed projects.",
   description:
-    "Learn about Space Manthan, our team, process, and the values behind our architecture and interior design work.",
+    "With 15+ years of expertise and 1000+ projects delivered globally, Space Manthan offers full-service turnkey interior design solutions in Gurugram.",
   keywords:
-    "about space manthan, architecture firm, interior design team, design process",
+    "modern office interior design, modern office interior",
   alternates: {
     canonical: "/about-us",
   },

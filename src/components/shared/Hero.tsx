@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 8, ease: "easeOut" }}
       >
         <Image
-          src="/images/home/dd.webp"
+          src="/images/home/egurukul.webp"
           alt="Space Manthan - Premium Office Design"
           fill
           priority

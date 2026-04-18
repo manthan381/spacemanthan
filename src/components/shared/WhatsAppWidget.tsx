@@ -15,13 +15,13 @@ export default function WhatsAppWidget() {
       href="https://wa.me/919218028364"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center w-12 h-12 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[9999] flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300"
       aria-label="Chat with us on WhatsApp"
     >
       <svg
         viewBox="0 0 24 24"
-        width="28"
-        height="28"
+        width="22"
+        height="22"
         fill="currentColor"
         stroke="none"
       >

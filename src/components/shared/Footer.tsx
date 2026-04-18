@@ -42,7 +42,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <FaFacebookF size={28} />
+                  <FaFacebookF size={22} />
                 </a>
                 <a
                   href="https://www.instagram.com/spacemanthan/"
@@ -50,7 +50,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <FaInstagram size={28} />
+                  <FaInstagram size={22} />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/space-manthan/"
@@ -58,7 +58,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <FaLinkedinIn size={28} />
+                  <FaLinkedinIn size={22} />
                 </a>
                 <a
                   href="https://www.youtube.com/@SpaceManthan555"
@@ -66,7 +66,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <FaYoutube size={28} />
+                  <FaYoutube size={22} />
                 </a>
                 <a
                   href="https://x.com/ManthanSpace"
@@ -74,7 +74,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition"
                 >
-                  <FaXTwitter size={28} />
+                  <FaXTwitter size={22} />
                 </a>
               </div>
             </div>
@@ -129,7 +129,7 @@ export default function Footer() {
               <li className="flex gap-2">
                 <div>
                   <MapPin
-                    size={28}
+                    size={22}
                     className="text-white"
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <Smartphone
-                    size={28}
+                    size={22}
                     className="text-white"
                   />
                 </div>
@@ -153,7 +153,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <Mail
-                    size={28}
+                    size={22}
                     className="text-white"
                   />
                 </div>
@@ -162,7 +162,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <MessageCircle
-                    size={28}
+                    size={22}
                     className="text-white"
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <div>
                   <CalendarClock
-                    size={28}
+                    size={22}
                     className="text-white"
                   />
                 </div>

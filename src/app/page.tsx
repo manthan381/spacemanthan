@@ -15,11 +15,11 @@ import { getLatestPosts } from "@/lib/blog/repository";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Space Manthan | Architecture, Interiors & Construction",
+  title: "No.1 Luxury office interior design company in gurugram | space manthan",
   description:
-    "Space Manthan delivers architecture, interiors, construction, and custom furniture under one roof with precision and craftsmanship.",
+    "Looking for office interior design? Get smart customized, innovative workspace solutions that boost productivity and reflect your company's identity.",
   keywords:
-    "architecture, interior design, construction, custom furniture, Gurgaon, Space Manthan",
+    "office interior design, office design, small office interior design",
   alternates: {
     canonical: "/",
   },

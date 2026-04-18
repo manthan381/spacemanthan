@@ -13,9 +13,8 @@ export default function ConnectPanel() {
       {/* Vertical "CONNECT" trigger button — fixed to right edge */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-50 bg-[#012169] text-white text-xs font-bold tracking-[0.25em] uppercase
-                   writing-mode-vertical px-2.5 py-3 shadow-lg hover:bg-[#0a2e8a] transition-colors duration-300
-                   flex items-center justify-center"
+        className="block fixed right-0 top-1/2 -translate-y-1/2 z-[60] bg-[#012169] text-white text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.25em] uppercase
+                   px-1.5 py-3 md:px-2.5 md:py-6 shadow-lg hover:bg-[#0a2e8a] transition-colors duration-300"
         style={{ writingMode: "vertical-rl", textOrientation: "mixed", letterSpacing: "0.2em" }}
         aria-label="Open consultation form"
       >
