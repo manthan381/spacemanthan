@@ -12,8 +12,8 @@ const navLinks = [
     name: "Expertise", 
     href: "/expertise",
     subLinks: [
-      { name: "Build", href: "/projects?category=Office+%26+Residence" },
-      { name: "Furniture", href: "/services/furniture" },
+      { name: "Design & Build", href: "/projects?category=Office%2C%20Design%20%26%20Build" },
+      { name: "Smart Furniture", href: "/services/furniture" },
     ]
   },
   { name: "Projects", href: "/projects" },

@@ -1,5 +1,6 @@
 // Next.js
 import { getSiteUrl, SITE_NAME } from "@/lib/site";
+import ConnectPanel from "@/components/shared/ConnectPanel";
 import WhatsAppWidget from "@/components/shared/WhatsAppWidget";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -63,6 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {children}
         <WhatsAppWidget />
+        <ConnectPanel />
       </body>
     </html>
   );

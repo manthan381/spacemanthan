@@ -1,7 +1,7 @@
 // /lib/data/projects.ts
 
 export type ProjectCategory =
-  | "Office & Residence";
+  | "Office, Design & Build";
 
 export type Project = {
   title: string;
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     title: "Urban Company, Corporate Office",
     slug: "urban-company-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Plot-183 Udyog Vihar Phase-I, Gurugram",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     title: "Fab Hotel, Corporate Office",
     slug: "fab-hotel-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Plot 183, Udyoog Vihar, Gurugram",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
   {
     title: "Medology Office",
     slug: "medology-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "A smart technology hub designed to foster innovation, featuring state-of-the-art meeting rooms, ergonomic workstations, and expansive collaborative areas.",
     location: "Plot 183, Udyoog Vihar, Gurugram",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
   {
     title: "Electrolux Office",
     slug: "electrolux-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Walled Block, Delhi Cantonment, Delhi",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   {
     title: "CIBT Corporate Office",
     slug: "cibt-corporate-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Gurugram",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
   {
     title: "Hotel Red Velvet, Corporate Office",
     slug: "red-velvet-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Gurugram",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
   {
     title: "Goldmine Office, Urbtech",
     slug: "urbtech-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Sector-138, Noida, Uttar Pradesh",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
   {
     title: "Zimbabwe Ambassador Home Office",
     slug: "defence-colony-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Defense Colony, New Delhi",
@@ -162,7 +162,7 @@ export const projects: Project[] = [
   {
     title: "Go Work, Co-Working Offices",
     slug: "go-works-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Udyog Vihar Phase-I, Gurugram",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
   {
     title: "New Door, Real Estate Consultant Office",
     slug: "new-door-success-tower",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Success Tower, Sector-62, Noida",
@@ -204,7 +204,7 @@ export const projects: Project[] = [
   {
     title: "Prabhattyam Solvex  Pvt Limited",
     slug: "prabhattyam-solvex-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Sector 135, Noida",
@@ -223,7 +223,7 @@ export const projects: Project[] = [
   {
     title: "General Commandant Office",
     slug: "general-commandant-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "Delhi Cantonment, Delhi",
@@ -238,7 +238,7 @@ export const projects: Project[] = [
   {
     title: "Perfect House",
     slug: "perfect-house-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "DLF Phase-II, Gurugram",
@@ -253,7 +253,7 @@ export const projects: Project[] = [
   {
     title: "DM 23",
     slug: "dm-23-real-estate-office",
-    category: "Office & Residence",
+    category: "Office, Design & Build",
     description:
       "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
     location: "DLF Phase-III, Gurugram",

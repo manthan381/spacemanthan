@@ -1,4 +1,3 @@
-import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import { StatsSection } from "@/components/shared/StatsSection";
@@ -52,7 +51,6 @@ export default function Home() {
           />
         </div>
       </div>
-      <ContactCTA />
       <Footer />
     </main>
   );

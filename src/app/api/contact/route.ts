@@ -96,7 +96,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("Contact form email error:", error);
+    console.error("Contact form email error:", error instanceof Error ? error.message : "Unknown error");
     return NextResponse.json(
       { success: false, error: "Failed to send email" },
       { status: 500 }
