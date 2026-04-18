@@ -55,7 +55,7 @@ export default function AboutSection() {
             className="relative w-full h-[380px] md:h-[460px] rounded-none overflow-hidden"
           >
             <Image
-              src="/images/bg/modern-office-space-1.png"
+              src="/images/home/1.5.webp"
               alt="Space Manthan — architectural design"
               fill
               className="object-cover"

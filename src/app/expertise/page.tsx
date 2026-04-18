@@ -16,7 +16,7 @@ const serviceCards = [
       "on-site execution",
     ],
     images: [
-      "/images/projects/urban-company-office-11.jpg",
+      "/images/projects/urban-company-office-10.jpg",
       "/images/projects/cibt-office.jpg",
       "/images/projects/electrolux/1.webp",
     ],
@@ -34,7 +34,7 @@ const serviceCards = [
       "installation support",
     ],
     images: [
-      "/images/services/customizable-furniture-1.jpg",
+      "/images/services/furnitture-1.webp",
       "/images/services/customizable-furniture-2.jpg",
       "/images/services/customizable-furniture.jpg",
     ],
@@ -83,7 +83,7 @@ export default function Home() {
 
           <div className="relative w-full aspect-[4/3] lg:aspect-[16/10] overflow-hidden shadow-2xl lg:scale-105 transition-transform duration-700 mt-10 lg:mt-0">
             <Image
-              src="/images/projects/urban-company-office-11.jpg"
+              src="/images/home/1.6.webp"
               alt="Space Manthan Expertise Overview"
               fill
               className="object-cover"
