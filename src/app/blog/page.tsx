@@ -1,6 +1,5 @@
 import { BlogGrid } from "@/components/shared/BlogGrid";
 import { BlogHero } from "@/components/shared/BlogHero";
-import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import { getPublishedPosts } from "@/lib/blog/repository";
@@ -27,7 +26,6 @@ export default async function Blog() {
         <BlogHero />
         <BlogGrid posts={posts} />
       </section>
-      <ContactCTA />
       <Footer />
     </main>
   );

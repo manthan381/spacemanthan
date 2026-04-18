@@ -45,7 +45,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
@@ -53,7 +53,7 @@ export function FAQSection() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
           >
             Frequently Wondered <span className="font-bold">Whys</span>
           </motion.h2>

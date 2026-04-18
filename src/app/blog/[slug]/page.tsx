@@ -1,6 +1,5 @@
 // app/blog/[slug]/page.tsx
 import ConsultationForm from "@/components/shared/ConsultationForm";
-import { ContactCTA } from "@/components/shared/ContactCTA";
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
 import { getPostBySlug } from "@/lib/blog/repository";
@@ -86,7 +85,7 @@ export default async function BlogDetailPage({
               </p>
             </header>
 
-            <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden mb-10">
+            <div className="relative w-full aspect-[1200/750] rounded-xl overflow-hidden mb-10">
               <Image
                 src={post.cover_image || "/images/blogs/blog-1.webp"}
                 alt={post.title}
@@ -110,7 +109,6 @@ export default async function BlogDetailPage({
           </aside>
         </div>
       </section>
-      <ContactCTA />
       <Footer />
     </main>
   );

@@ -67,7 +67,7 @@ export function ImpactSection() {
           <motion.h2 
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+            transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-bold text-black tracking-tight"
           >
@@ -82,7 +82,7 @@ export function ImpactSection() {
               className="flex flex-col items-center text-center group"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
               viewport={{ once: true }}
             >
               <div className="mb-6 relative">

@@ -1,171 +1,79 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@/components/ui/select";
-import { useState } from "react";
+import Image from "next/image";
 
 export default function Hero() {
-  const [form, setForm] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    area: "",
-  });
-
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleAreaChange = (value: string) => {
-    setForm({ ...form, area: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-
-    try {
-      const res = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", company: "", email: "", phone: "", area: "" });
-      } else throw new Error();
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
-    <section
-      className="relative h-[650px] w-full bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/hero-bg-spacemanthan-7.jpg')" }}
-    >
-      {/* Overlay */}
+    <section className="relative h-[700px] w-full overflow-hidden">
 
-      {/* Content */}
-      <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
-          {/* Left Side */}
+      {/* Background Image with Ken Burns Zoom-In */}
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        initial={{ scale: 1.12 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 8, ease: "easeOut" }}
+      >
+        <Image
+          src="/images/home/dd.webp"
+          alt="Space Manthan - Premium Office Design"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
+
+      {/* Subtle gradient overlay — darkens bottom for text legibility */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+      />
+
+      {/* Content — inline glass card, bottom-left */}
+      <div className="relative z-20 w-full h-full flex flex-col justify-end pb-20 px-4 sm:px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto w-full">
+
           <motion.div
-            initial={{ x: -60, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            className="text-white space-y-6"
+            className="bg-white/65 py-7 px-8 md:px-14 inline-block"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as const, delay: 0.6 }}
           >
-            <div className="bg-linear-to-r from-gray-900 to-[#101828b3] py-10 px-5 md:px-8 lg:px-20 max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            {/* Headline reveal */}
+            <div className="overflow-hidden">
+              <motion.h1
+                className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-black"
+                initial={{ y: "100%" }}
+                animate={{ y: "0%" }}
+                transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] as const, delay: 0.85 }}
+              >
                 One Vision. One Team. One Roof.
-              </h1>
-              <p className="text-md md:text-lg text-gray-300 max-w-xl font-semibold">
-                One-Stop Solution for Architecture, Interiors, Construction &
-                Custom Furnitures — All seamlessly managed and delivered hassle
-                free with Precision and Excellence.
-              </p>
+              </motion.h1>
             </div>
+
+            {/* Divider draws itself */}
+            <motion.div
+              className="h-[2px] bg-black/20 mt-3 mb-3"
+              initial={{ scaleX: 0, originX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, ease: "easeInOut", delay: 1.3 }}
+            />
+
+            {/* Body text */}
+            <motion.p
+              className="text-sm md:text-base text-gray-800 max-w-md font-normal leading-relaxed"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 1.5 }}
+            >
+              One-Stop Solution for Architecture, Interiors, Construction &
+              Custom Furnitures — All seamlessly managed and delivered hassle
+              free with Precision and Excellence.
+            </motion.p>
           </motion.div>
 
-          {/* Right Side - Form */}
-          <form onSubmit={handleSubmit}>
-            {/* Right Side - Form */}
-            <motion.div
-              initial={{ x: 60, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="bg-white rounded-none shadow-xl p-6 space-y-4 w-full max-w-sm mx-auto"
-            >
-              <h2 className="text-xl font-bold mb-5 text-gray-900">
-                Book a Consultation
-              </h2>
-
-              <Input
-                name="name"
-                placeholder="Full Name"
-                className="bg-gray-50 py-5"
-                value={form.name}
-                onChange={handleChange}
-                required
-                suppressHydrationWarning
-              />
-              <Input
-                name="company"
-                placeholder="Company"
-                className="bg-gray-50 py-5"
-                value={form.company}
-                onChange={handleChange}
-                suppressHydrationWarning
-              />
-              <Input
-                name="email"
-                placeholder="Email"
-                type="email"
-                className="bg-gray-50 py-5"
-                value={form.email}
-                onChange={handleChange}
-                required
-                suppressHydrationWarning
-              />
-              <Input
-                name="phone"
-                placeholder="Phone Number"
-                type="tel"
-                className="bg-gray-50 py-5"
-                value={form.phone}
-                onChange={handleChange}
-                required
-                suppressHydrationWarning
-              />
-
-              <Select onValueChange={handleAreaChange} value={form.area}>
-                <SelectTrigger className="bg-gray-50 w-full py-5" suppressHydrationWarning>
-                  <SelectValue placeholder="Select Carpet Area" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="below-1000">Below 1000 sq.ft</SelectItem>
-                  <SelectItem value="1000-2500">1000 - 2500 sq.ft</SelectItem>
-                  <SelectItem value="above-2500">Above 2500 sq.ft</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Button
-                type="submit"
-                className="w-full mt-5"
-                disabled={status === "sending"}
-              >
-                {status === "sending" ? "Sending..." : "Submit"}
-              </Button>
-              <p className="text-xs text-center">
-                By submitting this form you agree to the privacy policy
-              </p>
-              {status === "sent" && (
-                <p className="text-green-500 text-center text-sm mt-2">
-                  Consultation booked successfully!
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-red-500 text-center text-sm mt-2">
-                  Something went wrong. Please try again.
-                </p>
-              )}
-            </motion.div>
-          </form>
         </div>
       </div>
     </section>

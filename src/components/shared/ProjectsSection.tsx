@@ -34,7 +34,7 @@ const projects = [
   },
   {
     title: "Highways & Toll Plaza",
-    image: "/images/projects/highways-toll-plaza.jpg",
+    image: "/images/projects/highways-toll-plaza-2.jpg",
     link: "/projects?category=Highways+and+Toll+Plaza",
   },
   {

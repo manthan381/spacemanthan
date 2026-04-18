@@ -16,7 +16,7 @@ const categories: ProjectCategory[] = Array.from(
 
 // Category descriptions
 const categoryDescriptions: Record<ProjectCategory, string> = {
-  "Office & Residence":
+  "Office, Design & Build":
     "Modern office design balances comfort, flexibility, and function with breakout areas, collaboration zones, natural and adjustable lighting, and a welcoming reception to boost productivity and well-being.",
 };
 
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-none text-sm transition ${
+              className={`px-6 py-3 rounded-none text-lg transition ${
                 selectedCategory === category
                   ? "bg-[#273027] text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -70,11 +70,8 @@ export default function ProjectsPage() {
         </div>
 
         {/* Category Description */}
-        <div className="mb-24 p-6 bg-gray-50 rounded-none border border-gray-200">
-          <h2 className="text-2xl font-semibold mb-3">
-            {selectedCategory} Projects
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
+        <div className="mb-24 px-8 py-5 bg-gray-50 rounded-none border border-gray-200">
+          <p className="text-lg text-gray-700 leading-relaxed">
             {categoryDescriptions[selectedCategory]}
           </p>
         </div>

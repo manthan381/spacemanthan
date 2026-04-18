@@ -64,7 +64,7 @@ export default function BlogSection({
           className="text-3xl sm:text-4xl text-black mb-10 font-bold"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.8, ease: [0.215, 0.61, 0.355, 1] as const }}
           viewport={{ once: true }}
         >
           Top Industry <span>Insights</span>
@@ -75,7 +75,7 @@ export default function BlogSection({
           className="text-slate-600 max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] as const }}
           viewport={{ once: true }}
         >
           Stay updated with the latest trends, techniques, and perspectives
@@ -93,7 +93,7 @@ export default function BlogSection({
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative aspect-[4/3] w-full">
+              <div className="relative aspect-[1200/750] w-full">
                 <Image
                   src={blog.cover_image || "/images/blogs/blog-1.webp"}
                   alt={blog.title}
